@@ -85,7 +85,6 @@ class NumeroDifuso:
         else:
             return NumeroDifuso(self.matriz[0] * numdifuso.matriz[0], self.matriz[1] * numdifuso.matriz[1],
                                 self.matriz[2] * numdifuso.matriz[2], self.matriz[3] * numdifuso.matriz[2])
-                           self.matriz[2]*numdifuso.matriz[2], self.matriz[3]*numdifuso.matriz[2])
 
     # Método para dividir numero difuso
     def division(self, numdifuso):
