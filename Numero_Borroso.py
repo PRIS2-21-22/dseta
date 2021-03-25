@@ -74,34 +74,18 @@ class NumeroDifuso:
         if len(numdifuso.matriz) == len(self.matriz):
 
             if len(numdifuso.matriz) == 4:
-                return NumeroDifuso(self.matriz[0] - numdifuso.matriz[0], self.matriz[1] - numdifuso.matriz[1],
-                                    self.matriz[2] - numdifuso.matriz[2], self.matriz[3] - numdifuso.matriz[3])
+                return NumeroDifuso(self.matriz[0] * numdifuso.matriz[0], self.matriz[1] * numdifuso.matriz[1],
+                                    self.matriz[2] * numdifuso.matriz[2], self.matriz[3] * numdifuso.matriz[3])
             else:
-                return NumeroDifuso(self.matriz[0] - numdifuso.matriz[0], self.matriz[1] - numdifuso.matriz[1],
-                                    self.matriz[2] - numdifuso.matriz[2])
+                return NumeroDifuso(self.matriz[0] * numdifuso.matriz[0], self.matriz[1] * numdifuso.matriz[1],
+                                    self.matriz[2] * numdifuso.matriz[2])
         elif len(numdifuso) == 4:
-            return NumeroDifuso(self.matriz[0] - numdifuso.matriz[0], self.matriz[1] - numdifuso.matriz[1],
-                                self.matriz[2] - numdifuso[2])
+            return NumeroDifuso(self.matriz[0] * numdifuso.matriz[0], self.matriz[1] * numdifuso.matriz[1],
+                                self.matriz[2] * numdifuso[2])
         else:
-            return NumeroDifuso(self.matriz[0] - numdifuso.matriz[0], self.matriz[1] - numdifuso.matriz[1],
-                                self.matriz[2] - numdifuso.matriz[2], self.matriz[3] - numdifuso.matriz[2])
-#       if len(numdifuso.matriz) <= 2 or len(numdifuso.matriz) > 4:
-           # Exception("La matriz que quiere sumar a la anterior debe de tener un tamaño comprendido entre 3 y 4")
-
-#        if len(self.matriz) == len(numdifuso.matriz):
-        #
-        #   if len(numdifuso.matriz) == 4:
-        #       return NumeroDifuso(self.matriz[0]*numdifuso.matriz[0], self.matriz[1]*numdifuso.matriz[1],
-        #                           self.matriz[2]*numdifuso.matriz[2], self.matriz[3]*numdifuso.matriz[3])
-        #   else:
-        #       return NumeroDifuso(self.matriz[0]*numdifuso.matriz[0], self.matriz[1]*numdifuso.matriz[1],
-        #                           self.matriz[2]*numdifuso.matriz[2])
-#        elif len(numdifuso) == 4:
-#            return NumeroDifuso(self.matriz[0]*numdifuso.matriz[0], self.matriz[1]*numdifuso.matriz[1],
-#                                self.matriz[2]*numdifuso.matriz[2])
-#       else:
-#           return NumeroDifuso(self.matriz[0]*numdifuso.matriz[0], self.matriz[1]*numdifuso.matriz[1],
-    #                               self.matriz[2]*numdifuso.matriz[2], self.matriz[3]*numdifuso.matriz[2])
+            return NumeroDifuso(self.matriz[0] * numdifuso.matriz[0], self.matriz[1] * numdifuso.matriz[1],
+                                self.matriz[2] * numdifuso.matriz[2], self.matriz[3] * numdifuso.matriz[2])
+                           self.matriz[2]*numdifuso.matriz[2], self.matriz[3]*numdifuso.matriz[2])
 
     # Método para dividir numero difuso
     def division(self, numdifuso):
