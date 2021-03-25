@@ -16,7 +16,8 @@ class NumeroDifuso:
     def suma(self, numdifuso):
 
         if len(numdifuso.matriz) < 2 or len(numdifuso.matriz) > 4:
-            raise Exception("La matriz que quiere sumar a la anterior debe de tener un tamaño comprendido entre 3 y 4")
+            self.matriz = [0, 0, 0]
+            return "La matriz que quiere sumar a la anterior debe de tener un tamaño comprendido entre 3 y 4"
 
         if len(numdifuso.matriz) == len(self.matriz):
 
@@ -40,7 +41,8 @@ class NumeroDifuso:
     def resta(self, numdifuso):
 
         if len(numdifuso.matriz) <= 2 or len(numdifuso.matriz) > 4:
-            raise Exception("La matriz que quiere sumar a la anterior debe de tener un tamaño comprendido entre 3 y 4")
+            self.matriz = [0, 0, 0]
+            return "La matriz que quiere sumar a la anterior debe de tener un tamaño comprendido entre 3 y 4"
 
         if len(numdifuso.matriz) == len(self.matriz):
 
@@ -68,7 +70,8 @@ class NumeroDifuso:
     # Método para multiplicar un numero difuso
     def multiplicacion(self, numdifuso):
         if len(numdifuso.matriz) <= 2 or len(numdifuso.matriz) > 4:
-            raise Exception("La matriz debe de tener entre 3 y 4 elementos")
+            self.matriz = [0, 0, 0]
+            return "La matriz debe de tener entre 3 y 4 elementos"
 
         if len(numdifuso.matriz) == len(self.matriz):
 
@@ -89,11 +92,13 @@ class NumeroDifuso:
     def division(self, numdifuso):
 
         if len(numdifuso.matriz) <= 2 or len(numdifuso.matriz) > 4:
-            raise Exception("La matriz que quiere sumar debe de tener entre 3 y 4 elementos")
+            self.matriz = [0, 0, 0]
+            return "La matriz que quiere sumar debe de tener entre 3 y 4 elementos"
 
         for elemento in numdifuso.matriz:
             if elemento == 0:
-                raise Exception("Uno de los elementos es un cero")
+                self.matriz = [0, 0, 0]
+                return "Uno de los elementos es un cero"
 
         numdifuso_trans = NumeroDifuso(1/numdifuso.matriz[0], 1/numdifuso.matriz[1], 1/numdifuso.matriz[2],
                            1/numdifuso.matriz[3])
