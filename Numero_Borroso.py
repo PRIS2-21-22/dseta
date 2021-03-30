@@ -1,3 +1,5 @@
+
+
 class NumeroDifuso:
     # Matriz que representa el numero difuso
     matriz = []
@@ -11,7 +13,7 @@ class NumeroDifuso:
             self.matriz = [fac, b, c, d]
 
     # Método para sumar dos numeros difusos
-    def suma(self, numdifuso):
+    def suma (self, numdifuso):
 
         if len(numdifuso.matriz) < 2 or len(numdifuso.matriz) > 4:
             self.matriz = [0, 0, 0]
@@ -34,7 +36,7 @@ class NumeroDifuso:
         return numeroDif
 
     # Método para restar dos numeros difusos
-    def resta(self, numdifuso):
+    def resta (self, numdifuso):
 
         if len(numdifuso.matriz) <= 2 or len(numdifuso.matriz) > 4:
             self.matriz = [0, 0, 0]
@@ -57,15 +59,9 @@ class NumeroDifuso:
         return numeroDif
 
     # Método para hacer el opuesto de un numero difuso
-    def opuesto(self, numdifuso):
-
-        if len(numdifuso.matriz, ) > 3:
-            return NumeroDifuso(-numdifuso.matriz[0], numdifuso.matriz[1], numdifuso.matriz[2], numdifuso.matriz[3])
-
-        return NumeroDifuso(-numdifuso.matriz[0], numdifuso.matriz[1], numdifuso.matriz[2])
 
     # Método para multiplicar un numero difuso
-    def multiplicacion(self, numdifuso):
+    def multiplicacion (self, numdifuso):
 
         if len(numdifuso.matriz) <= 2 or len(numdifuso.matriz) > 4:
             self.matriz = [0, 0, 0]
@@ -110,6 +106,14 @@ class NumeroDifuso:
     def tostring(self):
         print(self.matriz)
 
+        
+def opuesto (numdifuso):
+
+    if len(numdifuso.matriz, ) > 3:
+        return NumeroDifuso(-numdifuso.matriz[0], numdifuso.matriz[1], numdifuso.matriz[2], numdifuso.matriz[3])
+
+    return NumeroDifuso(-numdifuso.matriz[0], numdifuso.matriz[1], numdifuso.matriz[2], -1)
+
 
 numdif = NumeroDifuso(fac=1, b=2, c=3, d=-1)
 numdif_secundario = NumeroDifuso(fac=1, b=2, c=3, d=4)
@@ -123,7 +127,7 @@ numdif_resta.tostring()
 numdif_mult = numdif.multiplicacion(numdif_secundario)
 numdif_mult.tostring()
 
-numdif_inv = numdif.opuesto(numdif_secundario)
+numdif_inv = opuesto(numdif_secundario)
 numdif_inv.tostring()
 
 numdif_div = numdif.division(numdif_secundario)
