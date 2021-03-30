@@ -3,7 +3,7 @@ class NumeroDifuso:
     matriz = []
 
     # Metodo para iniciar la clase
-    def __init__(self, fac: float, b: float, c: float, d: float):
+    def __init__ (self, fac: float, b: float, c: float, d: float):
 
         if d < 0:
             self.matriz = [fac, b, c]
@@ -57,7 +57,6 @@ class NumeroDifuso:
         return numeroDif
 
     # Método para hacer el opuesto de un numero difuso
-    @staticmethod
     def opuesto(self, numdifuso):
 
         if len(numdifuso.matriz, ) > 3:
