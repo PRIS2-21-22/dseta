@@ -1,10 +1,13 @@
+
 class NumeroDifuso:
+
     # Matriz que representa el numero difuso
     matriz = []
 
     # Metodo para iniciar la clase
     def __init__(self, fac: float, b: float, c: float, d: float):
-        if d == None:
+
+        if d < 0:
             self.matriz = [fac, b, c]
         else:
             self.matriz = [fac, b, c, d]
@@ -26,14 +29,9 @@ class NumeroDifuso:
             else:
                 numeroDif = NumeroDifuso(self.matriz[0] + numdifuso.matriz[0], self.matriz[1] + numdifuso.matriz[1],
                                          self.matriz[2] + numdifuso.matriz[2])
-
-        elif len(numdifuso) == 4:
-            numeroDif = NumeroDifuso(self.matriz[0] + numdifuso.matriz[0], self.matriz[1] + numdifuso.matriz[1],
-                                     self.matriz[2] + numdifuso.matriz[2])
-
         else:
             numeroDif = NumeroDifuso(self.matriz[0] + numdifuso.matriz[0], self.matriz[1] + numdifuso.matriz[1],
-                                     self.matriz[2] + numdifuso.matriz[2], self.matriz[3] + numdifuso.matriz[2])
+                                     self.matriz[2] + numdifuso.matriz[2], self.matriz[2] + numdifuso.matriz[2])
 
         return numeroDif
 
@@ -54,12 +52,9 @@ class NumeroDifuso:
             else:
                 numeroDif = NumeroDifuso(self.matriz[0] - numdifuso.matriz[0], self.matriz[1] - numdifuso.matriz[1],
                                          self.matriz[2] - numdifuso.matriz[2])
-        elif len(numdifuso) == 4:
-            numeroDif = NumeroDifuso(self.matriz[0] - numdifuso.matriz[0], self.matriz[1] - numdifuso.matriz[1],
-                                     self.matriz[2] - numdifuso[2])
         else:
             numeroDif = NumeroDifuso(self.matriz[0] - numdifuso.matriz[0], self.matriz[1] - numdifuso.matriz[1],
-                                     self.matriz[2] - numdifuso.matriz[2], self.matriz[3] - numdifuso.matriz[2])
+                                     self.matriz[2] - numdifuso.matriz[2], self.matriz[2] - numdifuso.matriz[2])
 
         return numeroDif
 
@@ -88,12 +83,9 @@ class NumeroDifuso:
             else:
                 numeroDif = NumeroDifuso(self.matriz[0] * numdifuso.matriz[0], self.matriz[1] * numdifuso.matriz[1],
                                          self.matriz[2] * numdifuso.matriz[2])
-        elif len(numdifuso) == 4:
-            numeroDif = NumeroDifuso(self.matriz[0] * numdifuso.matriz[0], self.matriz[1] * numdifuso.matriz[1],
-                                     self.matriz[2] * numdifuso[2])
         else:
             numeroDif = NumeroDifuso(self.matriz[0] * numdifuso.matriz[0], self.matriz[1] * numdifuso.matriz[1],
-                                     self.matriz[2] * numdifuso.matriz[2], self.matriz[3] * numdifuso.matriz[2])
+                                     self.matriz[2] * numdifuso.matriz[2], self.matriz[2] * numdifuso.matriz[2])
 
         return numeroDif
 
@@ -121,7 +113,7 @@ class NumeroDifuso:
         print(self.matriz)
 
 
-numdif = NumeroDifuso(fac=1, b=2, c=3, d=4)
+numdif = NumeroDifuso(fac=1, b=2, c=3, d = -1)
 numdif_secundario = NumeroDifuso(fac=1, b=2, c=3, d=4)
 
 numdif_suma = numdif.suma(numdif_secundario)
