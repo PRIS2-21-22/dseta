@@ -106,7 +106,6 @@ class NumeroDifuso:
     def tostring(self):
         print(self.matriz)
 
-        
 def opuesto (numdifuso):
 
     if len(numdifuso.matriz, ) > 3:
